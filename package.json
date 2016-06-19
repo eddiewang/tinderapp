@@ -20,7 +20,7 @@
     "build": "cross-env NODE_ENV=production webpack --config internals/webpack/webpack.prod.babel.js --color -p",
     "build:clean": "rimraf ./build/*",
     "build:dll": "node ./internals/scripts/dependencies.js",
-    "start": "cross-env NODE_ENV=development node server",
+    "start": "cross-env NODE_ENV=development babel-watch server",
     "start:tunnel": "cross-env NODE_ENV=development ENABLE_TUNNEL=true node server",
     "start:production": "npm run build && npm run start:prod",
     "start:prod": "cross-env NODE_ENV=production node server",
@@ -140,6 +140,7 @@
     "redux-saga": "^0.10.0",
     "reselect": "^2.5.1",
     "sanitize.css": "^3.3.0",
+    "tinder": "^1.19.0",
     "whatwg-fetch": "^1.0.0"
   },
   "devDependencies": {
@@ -155,6 +156,7 @@
     "babel-preset-react": "^6.5.0",
     "babel-preset-react-hmre": "^1.1.1",
     "babel-preset-stage-0": "^6.5.0",
+    "babel-watch": "^2.0.2",
     "chai": "^3.5.0",
     "chai-enzyme": "^0.4.2",
     "cheerio": "^0.20.0",
