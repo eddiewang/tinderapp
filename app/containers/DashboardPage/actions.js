@@ -24,3 +24,22 @@ export const getRecommendationsError = (err) => ({
   payload: err,
 });
 
+// export function getRecommendations() {
+//   return {
+//     type: GET_RECOMMENDATIONS,
+//   };
+// }
+
+// export function getRecommendationsSuccess(profiles) {
+//   return {
+//     type: GET_RECOMMENDATIONS_SUCCESS,
+//     payload: profiles,
+//   };
+// }
+
+// export function getRecommendationsError(err) {
+//   return {
+//     type: GET_RECOMMENDATIONS_ERROR,
+//     payload: err,
+//   };
+// }

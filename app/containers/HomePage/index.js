@@ -19,7 +19,7 @@ import { selectEmail } from './selectors';
 
 import { submitForm } from './actions';
 
-class HomePage extends React.Component { // eslint-disable-line react/prefer-stateless-function
+export class HomePage extends React.Component { // eslint-disable-line react/prefer-stateless-function
   constructor() {
     super();
     this.state = {

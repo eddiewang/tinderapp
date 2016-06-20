@@ -5,18 +5,18 @@ import { getRecommendationsError, getRecommendationsSuccess } from './actions';
 
 import request from 'utils/request';
 
-function* getRecommendations() {
+export function* getRecommendations() {
   const requestURL = '/api/tinder/recommendations';
   const profiles = yield call(request, requestURL);
 
   if (!profiles.err) {
-    yield put(getRecommendationsSuccess(profiles));
+    yield put(getRecommendationsSuccess(profiles.data.results));
   } else {
     yield put(getRecommendationsError(profiles.err));
   }
 }
 
-function* setWatcher() {
+export function* setWatcher() {
   while (yield take(GET_RECOMMENDATIONS)) {
     yield call(getRecommendations);
   }
