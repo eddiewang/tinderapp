@@ -1,3 +1,5 @@
+@import 'styles/index';
+
 .profileBlock {
   height: 320px;
   width: 320px;
@@ -26,5 +28,6 @@
 
 .wrapper h1 {
   position: absolute;
+  color: $test-color;
   bottom: 0;
 }

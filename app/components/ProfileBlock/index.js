@@ -7,7 +7,7 @@
 import React from 'react';
 import { USER } from './mock';
 
-import styles from './styles.css';
+import styles from './styles.scss';
 
 function ProfileBlock() {
   return (
