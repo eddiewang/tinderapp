@@ -15,7 +15,7 @@ function ProfileBlock() {
       <div className={styles.content}>
         <img alt="profile-pic" src={USER.photos[0].processedFiles[1].url} />
         <div className={styles.wrapper}>
-          <h1>{USER.name}</h1>
+          <h1 className={styles.special}>{USER.name}</h1>
           <h2>{`${USER.teaser.string}`}</h2>
         </div>
       </div>
