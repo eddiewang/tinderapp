@@ -57,6 +57,7 @@ export class HomePage extends React.Component { // eslint-disable-line react/pre
 
 HomePage.propTypes = {
   submitForm: PropTypes.func,
+  changeRoute: PropTypes.func,
 };
 
 const mapDispatchToProps = (dispatch) => (

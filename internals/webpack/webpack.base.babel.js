@@ -32,12 +32,16 @@ module.exports = (options) => ({
       include: /node_modules/,
       loaders: ['style-loader', 'css-loader'],
     }, {
+      test: /\.scss$/,
+      exclude: /node_modules/,
+      loader: options.sassLoaders,
+    }, {
       test: /\.(eot|svg|ttf|woff|woff2)$/,
       loader: 'file-loader',
     }, {
       test: /\.(jpg|png|gif)$/,
       loaders: [
-        'file-loader'
+        'file-loader',
         // 'image-webpack?{progressive:true, optimizationLevel: 7, interlaced: false, pngquant:{quality: "65-90", speed: 4}}',
       ],
     }, {
@@ -67,6 +71,9 @@ module.exports = (options) => ({
     }),
   ]),
   postcss: () => options.postcssPlugins,
+  sassLoader: {
+    includePaths: ['app'],
+  },
   resolve: {
     modules: ['app', 'node_modules'],
     extensions: [

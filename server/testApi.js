@@ -2,8 +2,8 @@ const router = require('express').Router(); // eslint-disable-line new-cap
 const tinder = require('tinder');
 const client = new tinder.TinderClient();
 const CONFIG = {
-  xauth: '35caa751-219c-4b5d-b8dd-3337d5ac2fb5',
-  token: 'EAAGm0PX4ZCpsBAFEHZBqhJGBvPC11C9AtVAUCtJk9gBsQiUkFVKLvkjSZAnAWpZAZChyBe5hSl1kKrq5N5SJc0sz0maNEHragZA463ZC0SAt6ZAxPYRyqHDhSvrKGNxcwKgPVB3zeF7Imi1ZAsS9FaBA9WyvwKhnLRKkiLKuE4o8aHQZDZD',
+  xauth: '6ea17555-5bcd-4359-a62d-ac3897a19a69',
+  token: 'EAAGm0PX4ZCpsBAGnZA65IOoovhYFRK93pnbM8ZAyXZCZCyziIweR5woc1wsJHsBlgvlvoO8MO8Rr1zZBxpIw9FZBI4UeCG2crKW5jAsQYzZCYio3iIZBpJKt3Hfi3olafjHMsrrZBGyXvVZCYOzuS3jE6Pe0pFmZBNZB43W3d7MgxTqJAhQZDZD',
   profileid: '1042457287',
 };
 
@@ -21,9 +21,9 @@ const tinderauth = (req, res, next) => {
   Gets Tinder XAuth Token with FB Token and Profile Id
 */
 router.get('/tinder/auth', (req, res) => {
-  client.authorize(CONFIG.token, CONFIG.profileid, () => {
-    const tinderxauthtoken = client.getAuthToken();
-    res.json(tinderxauthtoken);
+  client.authorize(CONFIG.token, CONFIG.profileid, (err, authed) => {
+    if (err) res.json(err);
+    res.json(authed);
   });
 });
 
@@ -65,7 +65,7 @@ router.post('/tinder/pass/:id', tinderauth, (req, res) => {
   client.pass(req.params.id, (err, passed) => {
     if (err) res.status(404).json(err);
     res.json(passed);
-  })
+  });
 });
 
 /*
