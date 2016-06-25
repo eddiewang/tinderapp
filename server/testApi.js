@@ -1,11 +1,7 @@
 const router = require('express').Router(); // eslint-disable-line new-cap
 const tinder = require('tinder');
 const client = new tinder.TinderClient();
-const CONFIG = {
-  xauth: '2f0bd3ab-e3a1-4712-9ba8-d8a46b55f3da',
-  token: 'EAAGm0PX4ZCpsBAIzLi6T9DVuuorEDZAxF12mZCsmGsS0oBjfIRhSluQukvnZCs33qyVEk6iRBQlKIZBkgeflTlLzKVhZA0HxbkZBaJnyAG1wPiJ9IoWavfLgWwlkdeUpTKMACok2zTVj4ZCjvxHWtldn4Ns6zx354ZBatCCfUzWfZB6gZDZD',
-  profileid: '1042457287',
-};
+const CONFIG = require('./config.js');
 
 const tinderauth = (req, res, next) => {
   const token = CONFIG.xauth;

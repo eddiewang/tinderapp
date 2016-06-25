@@ -9,14 +9,12 @@ import { connect } from 'react-redux';
 import selectAnalyticsPage from './selectors';
 import styles from './styles.scss';
 
-import avatar from 'assets/img/avatar.png';
-
 import Sidebar from 'components/Sidebar';
 import AppWrap from 'components/AppWrap';
 import DashboardHeading from 'components/DashboardHeading';
 import Card from 'components/Card';
 import Chart from 'components/Chart';
-import Avatar from 'components/Avatar';
+import AnalyticsOverview from 'components/AnalyticsOverview';
 
 
 const chartData = {
@@ -62,9 +60,7 @@ class AnalyticsPage extends React.Component { // eslint-disable-line react/prefe
         <Sidebar />
         <AppWrap>
           <DashboardHeading>Analytics</DashboardHeading>
-          <Card width={'100%'} height={'100%'}>
-            <Avatar avatar={avatar} width={150} height={150} />
-          </Card>
+          <AnalyticsOverview />
           <Card width={800} height={500}>
             <Chart type="bar" data={chartData} options={chartOptions} />
           </Card>
