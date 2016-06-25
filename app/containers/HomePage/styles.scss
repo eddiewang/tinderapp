@@ -1,0 +1,48 @@
+@import 'styles/index';
+
+.homePage {
+  background: $base-color;
+  height: 100vh;
+}
+
+.nav {
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $white;
+  ul {
+    display: flex;
+    justify-content: space-between;
+    width: 500px;
+    padding: 0 20px;
+  }
+  ul li {
+    display: inline-block;
+  }
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh - 300px);
+  color: white;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  max-width: 400px;
+  text-align: center;
+  h3 {
+    margin-top: 30px;
+  }
+}
+
+.btn {
+  padding-top: 40px;
+}

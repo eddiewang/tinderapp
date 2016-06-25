@@ -1,2 +1,8 @@
-$base-color: red;
-$test-color: yellow;
+$base-color: #FF455A;
+$base-color-light: lighten($base-color, 20%);
+$base-color-soft: #E84658;
+$white: #FFFFFF;
+$off-white: #EFEFEF;
+$grey: #808080;
+
+$anim: all 100ms ease-in;

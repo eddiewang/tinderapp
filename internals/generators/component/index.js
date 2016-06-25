@@ -48,8 +48,8 @@ module.exports = {
     if (data.wantCSS) {
       actions.push({
         type: 'add',
-        path: '../../app/components/{{properCase name}}/styles.css',
-        templateFile: './component/styles.css.hbs',
+        path: '../../app/components/{{properCase name}}/styles.scss',
+        templateFile: './component/styles.scss.hbs',
         abortOnFail: true,
       });
     }

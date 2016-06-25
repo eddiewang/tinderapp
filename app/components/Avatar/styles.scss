@@ -1,0 +1,18 @@
+.avatar {
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.50);
+  border-radius: 100px;
+}
+
+.avatarimg {
+  display: block;
+  position: absolute;
+  top: -9999px;
+  bottom: -9999px;
+  left: -9999px;
+  right: -9999px;
+  margin: auto;
+  min-height: 100%;
+  min-width: 100%;
+}

@@ -2,8 +2,8 @@ const router = require('express').Router(); // eslint-disable-line new-cap
 const tinder = require('tinder');
 const client = new tinder.TinderClient();
 const CONFIG = {
-  xauth: '6ea17555-5bcd-4359-a62d-ac3897a19a69',
-  token: 'EAAGm0PX4ZCpsBAGnZA65IOoovhYFRK93pnbM8ZAyXZCZCyziIweR5woc1wsJHsBlgvlvoO8MO8Rr1zZBxpIw9FZBI4UeCG2crKW5jAsQYzZCYio3iIZBpJKt3Hfi3olafjHMsrrZBGyXvVZCYOzuS3jE6Pe0pFmZBNZB43W3d7MgxTqJAhQZDZD',
+  xauth: '2f0bd3ab-e3a1-4712-9ba8-d8a46b55f3da',
+  token: 'EAAGm0PX4ZCpsBAIzLi6T9DVuuorEDZAxF12mZCsmGsS0oBjfIRhSluQukvnZCs33qyVEk6iRBQlKIZBkgeflTlLzKVhZA0HxbkZBaJnyAG1wPiJ9IoWavfLgWwlkdeUpTKMACok2zTVj4ZCjvxHWtldn4Ns6zx354ZBatCCfUzWfZB6gZDZD',
   profileid: '1042457287',
 };
 
@@ -23,7 +23,7 @@ const tinderauth = (req, res, next) => {
 router.get('/tinder/auth', (req, res) => {
   client.authorize(CONFIG.token, CONFIG.profileid, (err, authed) => {
     if (err) res.json(err);
-    res.json(authed);
+    else res.json(authed);
   });
 });
 

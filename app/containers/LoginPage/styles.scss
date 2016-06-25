@@ -1,0 +1,47 @@
+@import 'styles/index.scss';
+
+.loginContainer {
+  background: $base-color;
+  height: 100vh;
+  color: $white;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.formContainer {
+  /* Rectangle 2: */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  background: #F2F2F2;
+  box-shadow: 0px 2px 7px 0px rgba(0,0,0,0.50);
+  border-radius: 8px;
+  height: 445px;
+  width: 355px;
+
+  input {
+    /* form_inactive: */
+    /* ••••••••••••: */
+    font-family: ProximaNova-Regular;
+    font-size: 16px;
+    color: #757575;
+    letter-spacing: 0px;
+    line-height: 22px;
+    display: block;
+    /* Rectangle 3: */
+    background: #F7F7F7;
+    border: 1px solid #FFCCCC;
+    border-radius: 8px;
+    padding: 10px 20px;
+    margin: 20px auto;
+    &:active, &:focus {
+      background: #F7F7F7;
+      border: 1px solid #FF455A;
+      border-radius: 8px;
+      outline: none;
+    }
+  }
+}

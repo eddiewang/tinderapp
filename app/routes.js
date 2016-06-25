@@ -21,10 +21,18 @@ export default function createRoutes(store) {
       path: '/',
       name: 'home',
       getComponent(nextState, cb) {
+        System.import('containers/HomePage')
+          .then(loadModule(cb))
+          .catch(errorLoading);
+      },
+    }, {
+      path: '/login',
+      name: 'login',
+      getComponent(nextState, cb) {
         const importModules = Promise.all([
-          System.import('containers/HomePage/reducer'),
-          System.import('containers/HomePage/sagas'),
-          System.import('containers/HomePage'),
+          System.import('containers/LoginPage/reducer'),
+          System.import('containers/LoginPage/sagas'),
+          System.import('containers/LoginPage'),
         ]);
 
         const renderRoute = loadModule(cb);
@@ -34,8 +42,6 @@ export default function createRoutes(store) {
           injectSagas(sagas.default);
           renderRoute(component);
         });
-
-        importModules.catch(errorLoading);
       },
     }, {
       path: '/dashboard',
@@ -56,6 +62,24 @@ export default function createRoutes(store) {
         });
 
         importModules.catch(errorLoading);
+      },
+    }, {
+      path: '/analytics',
+      name: 'analytics',
+      getComponent(nextState, cb) {
+        const importModules = Promise.all([
+          System.import('containers/AnalyticsPage/reducer'),
+          System.import('containers/AnalyticsPage/sagas'),
+          System.import('containers/AnalyticsPage'),
+        ]);
+
+        const renderRoute = loadModule(cb);
+
+        importModules.then(([reducer, sagas, component]) => {
+          injectReducer('analytics', reducer.default);
+          injectSagas(sagas.default);
+          renderRoute(component);
+        });
       },
     }, {
       path: '*',

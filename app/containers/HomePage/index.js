@@ -1,75 +1,44 @@
 /*
+ *
  * HomePage
  *
- * This is the first thing users see of our App, at the '/' route
- *
- * NOTE: while this component should technically be a stateless functional
- * component (SFC), hot reloading does not currently support SFCs. If hot
- * reloading is not a neccessity for you then you can refactor it and remove
- * the linting exception.
  */
 
-import React, { PropTypes } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
-import { push } from 'react-router-redux';
+import styles from './styles.scss';
 
-import { createStructuredSelector } from 'reselect';
+import Button from 'components/Button';
+import { Link } from 'react-router';
 
-import { selectEmail } from './selectors';
-
-import { submitForm } from './actions';
-
-export class HomePage extends React.Component { // eslint-disable-line react/prefer-stateless-function
-  constructor() {
-    super();
-    this.state = {
-      email: 'test',
-      password: 'test',
-    };
-  }
-  onSubmit(e) {
-    e.preventDefault();
-    this.props.submitForm(this.state.email, this.state.password);
-    this.props.changeRoute('/dashboard');
-  }
-  onEmailChange(e) {
-    this.setState({
-      email: e.target.value,
-    });
-  }
-  onPasswordChange(e) {
-    this.setState({
-      password: e.target.value,
-    });
-  }
+class HomePage extends React.Component {// eslint-disable-line react/prefer-stateless-function
   render() {
     return (
-      <div>
-        <form onSubmit={(e) => this.onSubmit(e)}>
-          <input value={this.state.email} onChange={(e) => this.onEmailChange(e)} name="email" type="text" />
-          <input value={this.state.password} onChange={(e) => this.onPasswordChange(e)} name="password" type="password" />
-          <button>Login</button>
-        </form>
+      <div className={styles.homePage}>
+        <div className={styles.nav}>
+          <ul>
+            <li>About</li>
+            <li>FAQ</li>
+            <li>Github</li>
+          </ul>
+        </div>
+        <div className={styles.hero}>
+          <div className={styles.content}>
+            <h1>lit</h1>
+            <h3>tinder matching, messaging, and analytics at your fingertips</h3>
+            <Link to="login"><Button className={styles.btn}>Start</Button></Link>
+          </div>
+        </div>
       </div>
     );
   }
 }
 
-HomePage.propTypes = {
-  submitForm: PropTypes.func,
-  changeRoute: PropTypes.func,
-};
 
-const mapDispatchToProps = (dispatch) => (
-  {
-    submitForm: (email, password) => dispatch(submitForm(email, password)),
-    changeRoute: (url) => dispatch(push(url)),
-  }
-);
+function mapDispatchToProps(dispatch) {
+  return {
+    dispatch,
+  };
+}
 
-const mapStateToProps = createStructuredSelector({
-  email: selectEmail(),
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(HomePage);
-
+export default connect(mapDispatchToProps)(HomePage);

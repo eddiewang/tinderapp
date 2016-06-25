@@ -5,18 +5,22 @@
 */
 
 import React from 'react';
-import { USER } from './mock';
-
+// import { USER } from './mock';
+import moment from 'moment';
 import styles from './styles.scss';
 
-function ProfileBlock() {
+function ProfileBlock({ USER }) {
+  const age = moment().diff(USER.birth_date, 'Y');
   return (
     <div className={styles.profileBlock}>
       <div className={styles.content}>
-        <img alt="profile-pic" src={USER.photos[0].processedFiles[1].url} />
+        <img className={styles.img} alt="profile-pic" src={USER.photos[0].processedFiles[1].url} />
         <div className={styles.wrapper}>
-          <h1 className={styles.special}>{USER.name}</h1>
-          <h2>{`${USER.teaser.string}`}</h2>
+          <div className={styles.first}>
+            <span className={styles.name}>{USER.name}</span>
+            <span className={styles.age}>{age}</span>
+          </div>
+          <span className={styles.teaser}>{`${USER.teaser.string}`}</span>
         </div>
       </div>
     </div>

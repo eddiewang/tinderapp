@@ -10,31 +10,29 @@ import selectDashboardPage from './selectors';
 import { getRecommendations } from './actions';
 
 import ProfileBlock from 'components/ProfileBlock';
+import Sidebar from 'components/Sidebar';
+import DashboardHeading from 'components/DashboardHeading';
+import AppWrap from 'components/AppWrap';
+
 import styles from './styles.scss';
 
 class DashboardPage extends React.Component { // eslint-disable-line react/prefer-stateless-function
-  // componentWillMount() {
-  //   this.props.getProfiles();
-  // }
-  // renderProfiles() {
-  //   return this.props.profiles.map((profile) => (
-  //     <div>
-  //       <img alt="profile-pic" src={profile.photos[0].processedFiles[2].url} />
-  //       <h1>{profile.name}</h1>
-  //       <h2>{`${profile.teaser.string} | ${profile.birth_date}`}</h2>
-  //       <p>{profile.bio}</p>
-  //     </div>
-  //   ));
-  // }
+  componentWillMount() {
+    return this.props.profiles ? null : this.props.getProfiles();
+  }
   renderProfiles() {
-    return <ProfileBlock />;
+    return this.props.profiles.map((profile) => (
+      <ProfileBlock key={profile._id} USER={profile} /> // eslint-disable-line no-underscore-dangle
+    ));
   }
   render() {
     return (
       <div className={styles.dashboardPage}>
-        <h1>logo</h1>
-        <ProfileBlock />
-        {this.props.profiles && this.renderProfiles()}
+        <Sidebar />
+        <AppWrap>
+          <DashboardHeading>Dashboard</DashboardHeading>
+          {this.props.profiles && this.renderProfiles()}
+        </AppWrap>
       </div>
     );
   }
@@ -42,7 +40,7 @@ class DashboardPage extends React.Component { // eslint-disable-line react/prefe
 
 DashboardPage.propTypes = {
   getProfiles: PropTypes.func,
-  profiles: PropTypes.array,
+  profiles: PropTypes.oneOfType([PropTypes.array, PropTypes.bool]),
 };
 
 const mapStateToProps = selectDashboardPage();

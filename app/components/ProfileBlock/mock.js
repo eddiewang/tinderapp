@@ -325,7 +325,7 @@ export const USER = {
         }
       ],
       "teaser": {
-        "string": "Call It Spring Shoes- נעלי ספרינג",
+        "string": "Call It Spring Shoes",
         "type": "position"
       },
       "birth_date_info": "fuzzy birthdate active, not displaying real birth_date"
