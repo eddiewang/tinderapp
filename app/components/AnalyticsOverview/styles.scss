@@ -10,6 +10,7 @@
   width: 200px;
   margin: 20px;
   overflow: hidden;
+  float: left;
 }
 
 .selector {
@@ -27,11 +28,28 @@
 
 .statistics {
   position: relative;
-  transform: translateY(-100%);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+  display: inline-block;
+  top: 50%;
+  transform: translateY(60%);
 }
+
+.statblock {
+  display: inline-block;
+  margin-right: 70px;
+}
+
 .avatar {
   display: inline-block;
+}
+
+.statheading {
+  color: $base-color;
+}
+
+.label {
+  text-transform: uppercase;
+  font-size: 16px;
+  color: #808080;
+  letter-spacing: 0px;
+  line-height: 22px;
 }

@@ -25,8 +25,16 @@ function AnalyticsOverview() {
         </div>
         <div className={styles.statistics}>
           <div className={styles.statblock}>
-            <h1>145</h1>
+            <h1 className={styles.statheading}>145</h1>
             <span className={styles.label}>Likes</span>
+          </div>
+          <div className={styles.statblock}>
+            <h1 className={styles.statheading}>23</h1>
+            <span className={styles.label}>Matches</span>
+          </div>
+          <div className={styles.statblock}>
+            <h1 className={styles.statheading}>35</h1>
+            <span className={styles.label}>Messages</span>
           </div>
         </div>
       </Card>
