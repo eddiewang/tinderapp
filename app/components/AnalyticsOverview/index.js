@@ -9,13 +9,13 @@ import React from 'react';
 import Card from 'components/Card';
 import Avatar from 'components/Avatar';
 
-import avatar from 'assets/img/avatar.png';
+import avatar from 'assets/img/avatar.jpg';
 import styles from './styles.scss';
 
 function AnalyticsOverview() {
   return (
     <div className={styles.analyticsOverview}>
-      <Card width={'100%'} height={'100%'}>
+      <Card width={'100%'} height={'100%'} margin={'10px auto'} styles={{display: 'block !important'}}>
         <div className={styles.avatarblock}>
           <Avatar className={styles.avatar} avatar={avatar} width={150} height={150} />
         </div>

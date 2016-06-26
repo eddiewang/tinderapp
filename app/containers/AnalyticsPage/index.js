@@ -61,7 +61,13 @@ class AnalyticsPage extends React.Component { // eslint-disable-line react/prefe
         <AppWrap>
           <DashboardHeading>Analytics</DashboardHeading>
           <AnalyticsOverview />
-          <Card width={800} height={500}>
+          <Card width={"30%"} height={250}>
+            <Chart type="bar" data={chartData} options={chartOptions} />
+          </Card>
+          <Card width={"30%"} height={250}>
+            <Chart type="bar" data={chartData} options={chartOptions} />
+          </Card>
+          <Card width={"30%"} height={250}>
             <Chart type="bar" data={chartData} options={chartOptions} />
           </Card>
         </AppWrap>

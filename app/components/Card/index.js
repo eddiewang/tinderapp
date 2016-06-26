@@ -15,6 +15,8 @@ function Card(props) {
       style={{
         width: props.width,
         height: props.height,
+        margin: props.margin,
+        ...props.style,
       }}
     >
       {props.children}
@@ -26,6 +28,8 @@ Card.propTypes = {
   children: PropTypes.node,
   width: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   height: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+  margin: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+  style: PropTypes.object,
 };
 
 export default Card;

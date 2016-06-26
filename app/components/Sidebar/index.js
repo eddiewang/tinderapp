@@ -7,7 +7,7 @@
 import React from 'react';
 
 import styles from './styles.scss';
-import avatar from 'assets/img/avatar.png';
+import avatar from 'assets/img/avatar.jpg';
 
 import Avatar from 'components/Avatar';
 import { Link } from 'react-router';
