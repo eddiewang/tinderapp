@@ -53,9 +53,18 @@ class Chartjs extends React.Component {
   initializeChart(nextProps) {
     const el = ReactDOM.findDOMNode(this);
     const ctx = el.getContext('2d');
+    const gradient = ctx.createLinearGradient(0, 0, 170, 0);
+    gradient.addColorStop(0, 'rgba(255, 244, 147, 1)'); // show this color at 100%
+    gradient.addColorStop(1, 'rgba(232, 70, 88, 1)'); // show this color at 0%;
     const chart = new Chart(ctx, {
       type: nextProps.type,
-      data: nextProps.data,
+      data: {
+        ...nextProps.data,
+        datasets: [{
+          ...nextProps.data.datasets[0],
+          backgroundColor: gradient,
+        }],
+      },
       options: nextProps.options,
     });
     this.state.chart = chart;

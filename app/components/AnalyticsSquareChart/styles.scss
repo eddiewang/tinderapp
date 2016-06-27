@@ -1,0 +1,18 @@
+@import 'styles/index';
+
+.title {
+  display: block;
+  color: #808080;
+  font-size: 14px;
+  top: 10px;
+  text-align: center;
+  position: relative;
+  top: -10px;
+}
+
+.stat {
+  display: block;
+  color: $base-color;
+  text-align: center;
+  margin: 10px;
+}

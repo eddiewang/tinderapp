@@ -16,6 +16,7 @@ function Card(props) {
         width: props.width,
         height: props.height,
         margin: props.margin,
+        padding: props.padding,
         ...props.style,
       }}
     >
@@ -29,6 +30,7 @@ Card.propTypes = {
   width: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   height: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   margin: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+  padding: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   style: PropTypes.object,
 };
 
