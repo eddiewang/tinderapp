@@ -82,6 +82,24 @@ export default function createRoutes(store) {
         });
       },
     }, {
+      path: '/matches',
+      name: 'matches',
+      getComponent(nextState, cb) {
+        const importModules = Promise.all([
+          System.import('containers/MatchesPage/reducer'),
+          System.import('containers/MatchesPage/sagas'),
+          System.import('containers/MatchesPage'),
+        ]);
+
+        const renderRoute = loadModule(cb);
+
+        importModules.then(([reducer, sagas, component]) => {
+          injectReducer('matches', reducer.default);
+          injectSagas(sagas.default);
+          renderRoute(component);
+        });
+      },
+    }, {
       path: '*',
       name: 'notfound',
       getComponent(nextState, cb) {

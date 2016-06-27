@@ -65,6 +65,16 @@ router.post('/tinder/pass/:id', tinderauth, (req, res) => {
 });
 
 /*
+  Get User History (Matches, Messages, Blocks, etc)
+*/
+router.get('/tinder/history', tinderauth, (req, res) => {
+  client.getHistory((err, data) => {
+    if (err) res.status(404).json(err);
+    res.json(data);
+  });
+});
+
+/*
 ****LIKE RESULTS****
 {
   "match": {

@@ -9,5 +9,6 @@ stats.json
 npm-debug.log
 .idea
 
-#Config
+#Config and Private Data
 server/config.js
+mock
