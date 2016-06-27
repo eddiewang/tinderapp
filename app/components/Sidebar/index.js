@@ -21,10 +21,10 @@ function Sidebar() {
           className={styles.avatar}
         />
         <ul className={styles.navlist} >
-          <Link to="dashboard" activeClassName={styles.active}><li className={styles.listitem}>Dashboard</li></Link>
-          <Link to="analytics" activeClassName={styles.active}><li className={styles.listitem}>Analytics</li></Link>
-          <Link to="matches" activeClassName={styles.active}><li className={styles.listitem}>Matches</li></Link>
-          <Link to="dashboard" activeClassName={styles.active}><li className={styles.listitem}>Messages</li></Link>
+          <Link to="dashboard"><li className={styles.listitem}>Dashboard</li></Link>
+          <Link to="analytics"><li className={styles.listitem}>Analytics</li></Link>
+          <Link to="matches"><li className={styles.listitem}>Matches</li></Link>
+          <Link to="messages"><li className={styles.listitem}>Messages</li></Link>
         </ul>
       </div>
     </div>

@@ -100,6 +100,24 @@ export default function createRoutes(store) {
         });
       },
     }, {
+      path: '/messages',
+      name: 'messages',
+      getComponent(nextState, cb) {
+        const importModules = Promise.all([
+          System.import('containers/MessagesPage/reducer'),
+          System.import('containers/MessagesPage/sagas'),
+          System.import('containers/MessagesPage'),
+        ]);
+
+        const renderRoute = loadModule(cb);
+
+        importModules.then(([reducer, sagas, component]) => {
+          injectReducer('messages', reducer.default);
+          injectSagas(sagas.default);
+          renderRoute(component);
+        });
+      },
+    }, {
       path: '*',
       name: 'notfound',
       getComponent(nextState, cb) {

@@ -1,0 +1,33 @@
+.matchCard {
+  float: left;
+  margin: 20px;
+}
+
+.imagewrap {
+  float: left;
+  height: 100%;
+  overflow: hidden;
+}
+
+.contentwrap {
+  display: inline-block;
+  margin-left: 20px;
+  padding: 10px;
+  overflow: hidden;
+}
+
+.name {
+  display: inline-block;
+  font-size: 16px;
+  color: #2E2E2E;
+}
+
+.bio {
+  display: block;
+  font-size: 11px;
+  color: #808080;
+  text-overflow: ellipsis;
+  max-height: 100px;
+  max-width: 160px;
+  overflow: hidden;
+}

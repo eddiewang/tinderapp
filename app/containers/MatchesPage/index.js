@@ -12,10 +12,7 @@ import styles from './styles.scss';
 import Sidebar from 'components/Sidebar';
 import AppWrap from 'components/AppWrap';
 import DashboardHeading from 'components/DashboardHeading';
-
-import history from 'mock/history.json';
-
-const person = history.matches[0];
+import MatchCard from 'components/MatchCard';
 
 class MatchesPage extends React.Component { // eslint-disable-line react/prefer-stateless-function
   render() {
@@ -24,7 +21,14 @@ class MatchesPage extends React.Component { // eslint-disable-line react/prefer-
         <Sidebar />
         <AppWrap>
           <DashboardHeading>Matches</DashboardHeading>
-          {console.log(person)}
+          <MatchCard />
+          <MatchCard />
+          <MatchCard />
+          <MatchCard />
+          <MatchCard />
+          <MatchCard />
+          <MatchCard />
+          <MatchCard />
         </AppWrap>
       </div>
     );
