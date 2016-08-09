@@ -5,17 +5,13 @@
 */
 
 import React from 'react';
-import { connect } from 'react-redux';
+// import { connect } from 'react-redux';
 
 import styles from './styles.scss';
 
 import Card from 'components/Card';
 
-import history from 'mock/history.json';
-
-const data = history.matches[0];
-
-function MatchCard() {
+function MatchCard({ data }) {
   return (
     <div className={styles.matchCard}>
       <Card height={140} width={379} style={{padding: 0}}>
@@ -31,4 +27,4 @@ function MatchCard() {
   );
 }
 
-export default connect()(MatchCard);
+export default MatchCard;

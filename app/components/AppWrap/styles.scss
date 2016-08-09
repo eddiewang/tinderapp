@@ -1,12 +1,14 @@
 .appWrap {
-  float: right;
   position: relative;
   min-height: 100vh;
   height: 100%;
-  min-width: 80%;
-  width: 100%;
-  max-width: calc(100% - 300px);
-  padding: 70px;
+  width: 80%;
+  margin-left: 250px;
   background: #F2F2F2;
   z-index: -100;
+}
+
+.appContainer {
+  display: block;
+  margin: 0 auto;
 }

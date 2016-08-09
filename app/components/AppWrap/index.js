@@ -11,7 +11,9 @@ import styles from './styles.scss';
 function AppWrap(props) {
   return (
     <div className={styles.appWrap}>
-      {props.children}
+      <div className={styles.appContainer}>
+        {props.children}
+      </div>
     </div>
   );
 }

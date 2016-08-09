@@ -1,28 +1,37 @@
-body {
-  font-family: 'Lato', sans-serif;
-
-}
-
 a {
   color: $white;
 }
 
-h1, h2, h3 {
-  font-weight: 300;
-  letter-spacing: 0.2px;
-}
+h1 { @include h1-sans; }
+h2 { @include h2-sans; }
+h3 { @include h3-sans; }
+h4 { @include h4-sans; }
+h5 { @include h5-sans; }
+blockquote { @include blockquote; }
 
-h1 {
-  font-size: 48px;
-  line-height: 60px;
-}
+.h1-sans { @include h1-sans; }
+.h2-sans { @include h2-sans; }
+.h3-sans { @include h3-sans; }
+.h4-sans { @include h4-sans; }
+.h5-sans { @include h5-sans; }
+.h1-sans-normal { @include h1-sans-normal; }
+.h2-sans-normal { @include h2-sans-normal; }
+.h3-sans-normal { @include h3-sans-normal; }
+.h4-sans-normal { @include h4-sans-normal; }
+.h5-sans-normal { @include h5-sans-normal; }
+.h1-serif { @include h1-serif; }
+.h2-serif { @include h2-serif; }
+.h3-serif { @include h3-serif; }
 
-h2 {
-  font-size: 36px;
-  line-height: 48px;
-}
+.blockquote { @include blockquote; }
 
-h3 {
-  font-size: 24px;
-  line-height: 32px;
+.p1 { @include p1; }
+.p2 { @include p2; }
+
+.text-metadata {
+  @include text-metadata;
+
+  &.size-md {
+    @include text-metadata-md;
+  }
 }

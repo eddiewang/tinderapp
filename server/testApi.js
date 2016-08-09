@@ -13,20 +13,32 @@ const tinderauth = (req, res, next) => {
   }
 };
 
+// Mock Files
+const auth = require('./mock/auth.json');
+const history = require('./mock/history.json');
+const recommendations = require('./mock/recommendations.json');
+const personal = require('./mock/self.json');
+
 /*
   Gets Tinder XAuth Token with FB Token and Profile Id
 */
 router.get('/tinder/auth', (req, res) => {
-  client.authorize(CONFIG.token, CONFIG.profileid, (err, authed) => {
-    if (err) res.json(err);
-    else res.json(authed);
-  });
+  // DEV MODE
+  res.json(auth);
+  // PROD MODE
+  // client.authorize(CONFIG.token, CONFIG.profileid, (err, authed) => {
+  //   if (err) res.json(err);
+  //   else res.json(authed);
+  // });
 });
 
 /*
   Gets User Profile Information
 */
 router.get('/tinder/self', tinderauth, (req, res) => {
+  // DEV MODE
+  res.json(personal);
+  // PROD MODE
   client.getAccount((err, user) => {
     if (err) res.status(404).json(err);
     res.json(user);
@@ -37,10 +49,13 @@ router.get('/tinder/self', tinderauth, (req, res) => {
   Gets Profile Recommendations for User
 */
 router.get('/tinder/recommendations', tinderauth, (req, res) => {
-  client.getRecommendations(10, (err, profiles) => {
-    if (err) res.status(404).json(err);
-    res.json(profiles);
-  });
+  // DEV MODE
+  res.json(recommendations);
+  // PROD MODE
+  // client.getRecommendations(10, (err, profiles) => {
+  //   if (err) res.status(404).json(err);
+  //   res.json(profiles);
+  // });
 });
 
 /*
@@ -68,41 +83,13 @@ router.post('/tinder/pass/:id', tinderauth, (req, res) => {
   Get User History (Matches, Messages, Blocks, etc)
 */
 router.get('/tinder/history', tinderauth, (req, res) => {
-  client.getHistory((err, data) => {
-    if (err) res.status(404).json(err);
-    res.json(data);
-  });
+  // DEV MODE
+  res.json(history);
+  // PROD MODE
+  // client.getHistory((err, data) => {
+  //   if (err) res.status(404).json(err);
+  //   res.json(data);
+  // });
 });
-
-/*
-****LIKE RESULTS****
-{
-  "match": {
-    "_id": "574de9db2ad776210ccdcb635767bd15c965c4103cc1026d",
-    "closed": false,
-    "common_friend_count": 0,
-    "common_like_count": 0,
-    "created_date": "2016-06-20T17:29:09.093Z",
-    "dead": false,
-    "last_activity_date": "2016-06-20T17:29:09.093Z",
-    "message_count": 0,
-    "messages": [],
-    "participants": [
-      "574de9db2ad776210ccdcb63",
-      "5767bd15c965c4103cc1026d"
-    ],
-    "pending": false,
-    "is_super_like": false,
-    "following": true,
-    "following_moments": true
-  },
-  "likes_remaining": 100
-}
-
-{
-  "match": false,
-  "likes_remaining": 100
-}
-*/
 
 module.exports = router;

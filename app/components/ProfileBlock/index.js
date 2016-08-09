@@ -5,14 +5,13 @@
 */
 
 import React from 'react';
-// import { USER } from './mock';
 import moment from 'moment';
 import styles from './styles.scss';
 
-function ProfileBlock({ USER }) {
+function ProfileBlock({ USER, onClick }) {
   const age = moment().diff(USER.birth_date, 'Y');
   return (
-    <div className={styles.profileBlock}>
+    <div onClick={onClick} className={styles.profileBlock}>
       <div className={styles.content}>
         <img className={styles.img} alt="profile-pic" src={USER.photos[0].processedFiles[1].url} />
         <div className={styles.wrapper}>

@@ -1,0 +1,47 @@
+/* Media query mixins */
+/* ------------------------ */
+
+
+@mixin medium {
+  @media (min-width: #{$bp-medium}) {
+    @content;
+  }
+}
+@mixin large {
+  @media (min-width: #{$bp-large}) {
+    @content;
+  }
+}
+
+@mixin site-max-width {
+  @media (min-width: #{$bp-site-max-width}) {
+    @content;
+  }
+}
+
+@mixin clearfix {
+  &:before,
+  &:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+  }
+
+  &:after {
+    clear: both;
+  }
+}
+
+// Center vertically
+@mixin vertical-center-align($position: relative) {
+  position: $position;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+// Center vertically and horizontally
+@mixin center-align($position: relative) {
+  position: $position;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

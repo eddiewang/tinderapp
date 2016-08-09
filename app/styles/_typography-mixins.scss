@@ -1,0 +1,213 @@
+@mixin font-sans {
+  font-family: 'FuturaBT-Book', sans-serif;
+  font-weight: 300;
+}
+
+@mixin font-sans-bold {
+  font-family: 'FuturaBT-Heavy', sans-serif;
+  font-weight: 100;
+}
+
+@mixin font-serif {
+  font-family: 'CaslonGraD', serif;
+  font-weight: 100;
+}
+
+@mixin h1-sans {
+  font-size: 30px;
+  line-height: 35px;
+  @include font-sans-bold;
+
+  @include medium {
+    font-size: 54px;
+    line-height: 54px;
+  }
+}
+
+@mixin h2-sans {
+  font-size: 27px;
+  line-height: 31px;
+  @include font-sans-bold;
+
+  @include medium {
+    font-size: 36px;
+    line-height: 40px;
+  }
+}
+
+@mixin h3-sans {
+  font-size: 20px;
+  line-height: 22px;
+  @include font-sans-bold;
+
+  @include medium {
+    font-size: 27px;
+    line-height: 33px;
+  }
+}
+
+@mixin h4-sans {
+  font-size: 18px;
+  line-height: 19px;
+  @include font-sans-bold;
+
+  @include medium {
+    font-size: 23px;
+    line-height: 25px;
+  }
+}
+
+@mixin h5-sans {
+  font-size: 16px;
+  line-height: 17px;
+  @include font-sans-bold;
+
+  @include medium {
+    font-size: 18px;
+    line-height: 20px;
+  }
+}
+
+@mixin h1-sans-normal {
+  font-size: 30px;
+  line-height: 35px;
+  @include font-sans;
+
+  @include medium {
+    font-size: 54px;
+    line-height: 54px;
+  }
+}
+
+@mixin h2-sans-normal {
+  font-size: 27px;
+  line-height: 31px;
+  @include font-sans;
+
+  @include medium {
+    font-size: 36px;
+    line-height: 40px;
+  }
+}
+
+@mixin h3-sans-normal {
+  font-size: 20px;
+  line-height: 22px;
+  @include font-sans;
+
+  @include medium {
+    font-size: 27px;
+    line-height: 33px;
+  }
+}
+
+@mixin h4-sans-normal {
+  font-size: 18px;
+  line-height: 19px;
+  @include font-sans;
+
+  @include medium {
+    font-size: 23px;
+    line-height: 25px;
+  }
+}
+
+@mixin h5-sans-normal {
+  font-size: 16px;
+  line-height: 17px;
+  @include font-sans;
+
+  @include medium {
+    font-size: 18px;
+    line-height: 20px;
+  }
+}
+
+@mixin h1-serif {
+  font-size: 50px;
+  line-height: 1;
+  @include font-serif;
+
+  @include medium {
+    font-size: 70px;
+  }
+
+  @include large {
+    font-size: 80px;
+  }
+}
+
+@mixin h2-serif {
+  font-size: 30px;
+  line-height: 1;
+  @include font-serif;
+
+  @include medium {
+    font-size: 50px;
+    font-weight: 300;
+  }
+}
+
+@mixin h3-serif {
+  font-size: 30px;
+  line-height: 1;
+  @include font-serif;
+
+  @include medium {
+    font-size: 36px;
+  }
+}
+
+@mixin p1 {
+  font-size: 16px;
+  line-height: 1.5;
+  @include font-sans;
+
+  @include medium {
+    font-size: 20px;
+  }
+}
+
+@mixin p2 {
+  font-size: 16px;
+  line-height: 1.5;
+  @include font-sans;
+
+  @include medium {
+    font-size: 18px;
+  }
+}
+
+@mixin text-metadata {
+  color: $color-black-semitransparent-darkest;
+  font-size: 11px;
+  line-height: 18px;
+  letter-spacing: 4px;
+  @include font-sans-bold;
+
+  @include medium {
+    letter-spacing: 6px;
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+
+@mixin text-metadata-md {
+  @include text-metadata;
+
+  @include medium {
+    font-size: 15px;
+  }
+}
+
+@mixin blockquote {
+  color: $color-green;
+  font-size: 20px;
+  line-height: 26px;
+  @include font-sans-bold;
+
+  @include medium {
+   font-size: 40px;
+   line-height: 52px;
+  }
+}

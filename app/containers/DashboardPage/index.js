@@ -17,12 +17,21 @@ import AppWrap from 'components/AppWrap';
 import styles from './styles.scss';
 
 class DashboardPage extends React.Component { // eslint-disable-line react/prefer-stateless-function
+  constructor() {
+    super();
+    this.state = {
+      profileModal: false,
+    };
+  }
   componentWillMount() {
     return this.props.profiles ? null : this.props.getProfiles();
   }
+  toggleProfile(profile) {
+    console.log(profile);
+  }
   renderProfiles() {
     return this.props.profiles.map((profile) => (
-      <ProfileBlock key={profile._id} USER={profile} /> // eslint-disable-line no-underscore-dangle
+      <ProfileBlock onClick={() => this.toggleProfile(profile)} key={profile._id} USER={profile} /> // eslint-disable-line no-underscore-dangle
     ));
   }
   render() {

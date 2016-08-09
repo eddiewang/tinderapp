@@ -21,7 +21,7 @@ export default class App extends React.Component { // eslint-disable-line react/
 
   render() {
     return (
-      <div>
+      <div className="container-fluid">
         {this.props.children}
       </div>
     );

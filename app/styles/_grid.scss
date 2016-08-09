@@ -1,0 +1,81 @@
+/* _grid.scss */
+
+/* _grid config */
+
+$grid-cols: 12;
+$grid-col-padding: 15px;
+
+/* _grid base */
+.container-fluid { width: 100%; }
+
+.container {
+  max-width: $site-max-width;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.container-padded {
+  max-width: $site-max-width;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-right: auto;
+  margin-left: auto;
+
+  @include large {
+    padding-left: 80px;
+    padding-right: 80px;
+  }
+}
+.container-hero {
+  max-width: $site-max-width;
+  margin-right: auto;
+  margin-left: auto;
+
+  @include large {
+    padding-left: 80px;
+    padding-right: 80px;
+  }
+}
+.container-yellow {
+  background: $color-yellow;
+}
+.container-gray {
+  background: $color-dark-beige;
+}
+
+@for $i from 1 through $grid-cols {
+  .row-sm > .col-#{$i} {
+    margin-left: 4px;
+    width: (100% / $grid-cols) * $i;
+    &:first-child, &.first-child { margin-left: 0; }
+  }
+
+  @include medium {
+    .row-md > .col-#{$i} {
+      margin-left: 40px;
+      width: (100% / $grid-cols) * $i;
+      &:first-child, &.first-child { margin-left: 0; }
+    }
+  }
+
+  @include large {
+    .row-lg > .col-#{$i} {
+      margin-left: 40px;
+      width: (100% / $grid-cols) * $i;
+      &:first-child, &.first-child { margin-left: 0; }
+    }
+  }
+
+  .no-gutters .col-#{$i} { margin-left: 0; }
+}
+
+.row-sm {
+  display: flex;
+}
+
+.row-md {
+  @include medium { display: flex; }
+}
+.row-lg {
+  @include large { display: flex; }
+}
